@@ -9,6 +9,7 @@ function EoyForm() {
 	const [topicTwo, setTopicTwo] = useState('');
 	const [supervisor, setSupervisor] = useState('');
 	const [showSuccess, setShowSuccess] = useState('');
+	const [loading, setIsLoading] = useState('');
 
 	function handleAddEoyProject(e) {
 		e.preventDefault();
@@ -22,15 +23,21 @@ function EoyForm() {
 			projectSupervisor: supervisor,
 		};
 
-		console.log(data);
-		axios({ url: 'http://localhost:8000/projects/eoy', data, method: 'post' })
+		setIsLoading('Loading...');
+		axios({
+			url: 'https://projects-backend-dg1d.onrender.com/projects/eoy',
+			data,
+			method: 'post',
+		})
 			.then(function (response) {
 				if (response.status === 201) {
 					setShowSuccess('Success!!!');
+					setIsLoading('')
 				}
 			})
 			.catch(function (error) {
-				setShowSuccess('Failed!!! Re-submit the form');
+					setIsLoading('')
+					setShowSuccess('Failed!!! Re-submit the form');
 			});
 	}
 
@@ -123,7 +130,7 @@ function EoyForm() {
 					placeholder="Project topic"
 				/>
 			</div>
-			<div className="success">{showSuccess}</div>
+			<div className="success">{showSuccess} {loading} </div>
 
 			<div className="btns">
 				<button type="submit" className="btn" onClick={handleAddEoyProject}>
