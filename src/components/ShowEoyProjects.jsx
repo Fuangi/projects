@@ -1,13 +1,46 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 function ShowEoyProjects() {
-  // function handleSort(field) {}
+  const [projects, setProjects] = useState([]);
+
+  useEffect(function () {
+    axios({
+      url: "https://projects-backend-dg1d.onrender.com/projects/eoy",
+      method: "get",
+    })
+      .then(function (res) {
+        setProjects(res.data.data.projects);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
+  function handleSort(field) {
+    axios({
+      url: `https://projects-backend-dg1d.onrender.com/projects/eoy/?sort=${field}`,
+      method: "get",
+    })
+      .then(function (res) {
+        setProjects(res.data.data.projects);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   return (
     <div className="projects eoy">
       <h1>End of Year Project Topics</h1>
       <div className="sort">
-        <button>Sort By Level</button>
-        <button>Sort By Specialty</button>
-        <button>Sort By Supervisor</button>
+        <button onClick={() => handleSort("level")}>Sort By Level</button>
+        <button onClick={() => handleSort("specialty")}>
+          Sort By Specialty
+        </button>
+        <button onClick={() => handleSort("supervisor")}>
+          Sort By Supervisor
+        </button>
       </div>
       <table className="project-table">
         <thead className="eoy-headings">
@@ -21,22 +54,18 @@ function ShowEoyProjects() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Your Name</td>
-            <td>Your Level</td>
-            <td>Your Specialty</td>
-            <td>Your Project 1</td>
-            <td>Your Project 2</td>
-            <td>Your Supervisor</td>
-          </tr>
-          <tr>
-            <td>Your Name</td>
-            <td>Your Level</td>
-            <td>Your Specialty</td>
-            <td>Your Project 1</td>
-            <td>Your Project 2</td>
-            <td>Your Supervisor</td>
-          </tr>
+          {projects?.map((project) => {
+            return (
+              <tr key={project?._id}>
+                <td>{project.name}</td>
+                <td>{project.level}</td>
+                <td>{project.specialty}</td>
+                <td>{project?.projectTopic1}</td>
+                <td>{project?.projectTopic2}</td>
+                <td>{project?.supervisor}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
