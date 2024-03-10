@@ -1,12 +1,34 @@
 import { useState } from "react";
+import axios from "axios";
 
 function DesignForm() {
   const [members, setMembers] = useState([]);
   const [topic, setTopic] = useState("");
+  const [showSuccess, setShowSuccess] = useState("");
 
   function handleAddDesignProject(e) {
     e.preventDefault();
     console.log(members);
+    let arrayStud = members.split("\n");
+
+    axios({
+      url: "http://localhost:8000/projects/design",
+      method: "post",
+      data: {
+        members: arrayStud,
+        project: topic,
+      },
+    })
+      .then(function (res) {
+        if (res.status === 201) {
+          console.log(res);
+          setShowSuccess("Success!!!");
+        }
+      })
+      .catch(function (res) {
+        setShowSuccess("Failed!!! Re-submit the form");
+        console.log(res);
+      });
   }
 
   return (
@@ -34,7 +56,7 @@ function DesignForm() {
           onChange={(e) => setTopic(e.target.value)}
         />
       </div>
-
+      <div className="success">{showSuccess}</div>
       <div class="btns">
         <button type="submit" class="btn" onClick={handleAddDesignProject}>
           SUBMIT

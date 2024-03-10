@@ -171,6 +171,12 @@ option {
   text-transform: capitalize;
 }
 
+.success {
+  color: #b53761;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 /* responsiveness */
 
 @media (max-width: 1100px) {

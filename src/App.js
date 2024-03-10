@@ -12,7 +12,7 @@ function App() {
       {/* // Routes */}
       <BrowserRouter>
         <Routes>
-          <Route path="new-project" element={<Projects />}>
+          <Route path="/" element={<Projects />}>
             <Route index element={<Eoy />} />
             <Route path="eoy" index element={<Eoy />} />
             <Route path="design" element={<Design />} />
