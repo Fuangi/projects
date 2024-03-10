@@ -33,9 +33,11 @@ function DesignForm() {
 
   return (
     <form id="form" action="" method="post">
+      <h3>Ensure you have grouped yourselves in 3 please!</h3>
       <div className="input-field">
         <label htmlFor="name">Group member names</label>
         <textarea
+          placeholder="Enter your names, each on a new line"
           class="input"
           id="textarea"
           cols="30"
@@ -49,6 +51,7 @@ function DesignForm() {
         <label htmlFor="topic">Project Topic </label>
         <input
           class="input"
+          placeholder="Enter your project topic"
           type="text"
           name="topic"
           id="topic"

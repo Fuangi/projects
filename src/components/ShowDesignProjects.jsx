@@ -26,7 +26,7 @@ function ShowDesignProjects() {
           to="/show-projects/eoy"
           style={{ textDecoration: "none", color: "white" }}
         >
-          View Design Projects
+          View End of year Projects
         </Link>
       </button>
       <table className="project-table">

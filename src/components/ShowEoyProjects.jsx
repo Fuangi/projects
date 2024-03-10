@@ -71,7 +71,7 @@ function ShowEoyProjects() {
                 <td>{project.specialty}</td>
                 <td>{project?.projectTopic1}</td>
                 <td>{project?.projectTopic2}</td>
-                <td>{project?.supervisor}</td>
+                <td>{project?.projectSupervisor}</td>
               </tr>
             );
           })}
