@@ -1,0 +1,21 @@
+@forward "./styles/main.scss";
+
+:root {
+  --primary-one: #b53761;
+  --primary-two: #ef7d7a;
+  --col-grad: linear-gradient(to bottom, #df4b7d, #b53761);
+  --dark-grad: linear-gradient(to bottom, #3c4c77, #283351);
+  --dark: #283351;
+  --blue: #7ebbeb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 0;
+}
+body {
+  font-family: poppins, sans-serif;
+  color: var(--dark);
+}

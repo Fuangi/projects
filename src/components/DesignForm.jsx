@@ -6,6 +6,7 @@ function DesignForm() {
 
   function handleAddDesignProject(e) {
     e.preventDefault();
+    console.log(members);
   }
 
   return (

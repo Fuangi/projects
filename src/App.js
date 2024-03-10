@@ -2,6 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Projects from "./Projects";
 import Eoy from "./Eoy";
 import Design from "./Design";
+import ShowDesignProjects from "./components/ShowDesignProjects";
+import ShowEoyProjects from "./components/ShowEoyProjects";
+import ShowProjects from "./components/ShowAllProjects";
 
 function App() {
   return (
@@ -9,15 +12,15 @@ function App() {
       {/* // Routes */}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Projects />}>
+          <Route path="new-project" element={<Projects />}>
             <Route index element={<Eoy />} />
             <Route path="eoy" index element={<Eoy />} />
             <Route path="design" element={<Design />} />
           </Route>
-          {/*       <Route path="projects" element={<p>Forms</p>}>
-            <Route path="design" element={<h1>All design Projects</h1>} />
-            <Route path="eoy" element={<h1>All End of year Projects</h1>} />
-          </Route> */}
+          <Route path="show-projects" element={<ShowProjects />}>
+            <Route path="design" element={<ShowDesignProjects />} />
+            <Route path="eoy" element={<ShowEoyProjects />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
