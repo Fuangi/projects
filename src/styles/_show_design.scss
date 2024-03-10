@@ -48,4 +48,16 @@
       font-size: 25px !important;
     }
   }
+  .view-page {
+    width: 200px;
+    padding: 15px;
+    border: none;
+    background-color: rgba(181, 55, 97, 0.9);
+    border-radius: 5px;
+    color: white;
+
+    &:last-child {
+      width: 200px;
+    }
+  }
 }

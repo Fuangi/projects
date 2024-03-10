@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function ShowEoyProjects() {
   const [projects, setProjects] = useState([]);
@@ -40,6 +41,14 @@ function ShowEoyProjects() {
         </button>
         <button onClick={() => handleSort("supervisor")}>
           Sort By Supervisor
+        </button>
+        <button>
+          <Link
+            to="/show-projects/design"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            View Design Projects
+          </Link>
         </button>
       </div>
       <table className="project-table">

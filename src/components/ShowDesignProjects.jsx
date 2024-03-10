@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-const text = ["Van", "Essa", "Hey"];
+import { Link } from "react-router-dom";
 
 function ShowDesignProjects() {
   const [projects, setProjects] = useState([]);
@@ -22,6 +21,14 @@ function ShowDesignProjects() {
   return (
     <div className="projects">
       <h1>Design Project Topics</h1>
+      <button className="view-page">
+        <Link
+          to="/show-projects/eoy"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          View Design Projects
+        </Link>
+      </button>
       <table className="project-table">
         <thead>
           <tr>
