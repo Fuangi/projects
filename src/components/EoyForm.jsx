@@ -23,7 +23,11 @@ function EoyForm() {
 		};
 
 		console.log(data);
-		axios({ url: 'http://localhost:8000/projects/eoy', data, method: 'post' })
+		axios({
+			url: 'https://projects-backend-dg1d.onrender.com/projects/eoy',
+			data,
+			method: 'post',
+		})
 			.then(function (response) {
 				if (response.status === 201) {
 					setShowSuccess('Success!!!');
