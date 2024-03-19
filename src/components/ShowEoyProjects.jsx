@@ -59,7 +59,7 @@ function ShowEoyProjects() {
       <table className="project-table">
         <thead className="eoy-headings">
           <tr>
-            <th>S/N</th>/th>
+            <th>S/N</th>
             <th>Student Name</th>
             <th>Level</th>
             <th>Specialty</th>
