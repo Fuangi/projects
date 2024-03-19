@@ -72,7 +72,7 @@ function ShowEoyProjects() {
           {projects?.map((project, i) => {
             return (
               <tr key={project?._id}>
-                <td>{i}</td>
+                <td>{i + 1}</td>
                 <td>{project.name}</td>
                 <td>{project.level}</td>
                 <td>{project.specialty}</td>

@@ -49,7 +49,7 @@ function ShowDesignProjects() {
           {projects?.map((project, i) => {
             return (
               <tr key={project._id}>
-                <td>{i}</td>
+                <td>{i + 1}</td>
                 <td>{project?.project}</td>
                 <td>
                   {project?.members.map((member) => {
