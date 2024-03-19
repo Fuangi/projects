@@ -40,14 +40,16 @@ function ShowDesignProjects() {
       <table className="project-table">
         <thead>
           <tr>
+            <th>S/N</th>
             <th>Project Topic</th>
             <th>Project Members</th>
           </tr>
         </thead>
         <tbody>
-          {projects?.map((project) => {
+          {projects?.map((project, i) => {
             return (
               <tr key={project._id}>
+                <td>{i}</td>
                 <td>{project?.project}</td>
                 <td>
                   {project?.members.map((member) => {

@@ -59,6 +59,7 @@ function ShowEoyProjects() {
       <table className="project-table">
         <thead className="eoy-headings">
           <tr>
+            <th>S/N</th>/th>
             <th>Student Name</th>
             <th>Level</th>
             <th>Specialty</th>
@@ -68,9 +69,10 @@ function ShowEoyProjects() {
           </tr>
         </thead>
         <tbody>
-          {projects?.map((project) => {
+          {projects?.map((project, i) => {
             return (
               <tr key={project?._id}>
+                <td>{i}</td>
                 <td>{project.name}</td>
                 <td>{project.level}</td>
                 <td>{project.specialty}</td>
