@@ -35,20 +35,25 @@ function ShowEoyProjects() {
     <div className="projects eoy">
       <h1>End of Year Project Topics</h1>
       <div className="sort">
-        <button onClick={() => handleSort("level")}>Sort By Level</button>
-        <button onClick={() => handleSort("specialty")}>
+        <button onClick={() => handleSort("level")} className="onDownload">
+          Sort By Level
+        </button>
+        <button onClick={() => handleSort("specialty")} className="onDownload">
           Sort By Specialty
         </button>
-        <button onClick={() => handleSort("supervisor")}>
+        <button onClick={() => handleSort("supervisor")} className="onDownload">
           Sort By Supervisor
         </button>
-        <button>
+        <button className="onDownload">
           <Link
             to="/show-projects/design"
             style={{ textDecoration: "none", color: "white" }}
           >
             View Design Projects
           </Link>
+        </button>
+        <button onClick={() => window.print()} className="onDownload">
+          Download
         </button>
       </div>
       <table className="project-table">

@@ -21,14 +21,22 @@ function ShowDesignProjects() {
   return (
     <div className="projects">
       <h1>Design Project Topics</h1>
-      <button className="view-page">
-        <Link
-          to="/show-projects/eoy"
-          style={{ textDecoration: "none", color: "white" }}
+      <div className="sort">
+        <button className="view-page onDownload">
+          <Link
+            to="/show-projects/eoy"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            View End of year Projects
+          </Link>
+        </button>
+        <button
+          onClick={() => window.print()}
+          className=" view-page onDownload"
         >
-          View End of year Projects
-        </Link>
-      </button>
+          Download
+        </button>
+      </div>
       <table className="project-table">
         <thead>
           <tr>
